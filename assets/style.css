@@ -287,6 +287,21 @@ html {
   .top-menu {
     display: none !important;
   }
+
+  .hobby-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #hobby-img {
+    height: 80%;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  #projects h2 {
+    font-size: 1.5rem; /* larger heading */
+  }
   
 }
 
@@ -371,13 +386,14 @@ html {
 
 #hobby-img {
   height: 420px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
 }
 
 #hobby-desc {
   margin-top: 1rem;
   font-size: 1.2rem;
+  font-style: italic;
 }
 
 /* Animated name */
@@ -443,10 +459,9 @@ html {
 
 #about-me h1 {
   font-size: 3.2rem; /* larger heading */
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-align: left;
 }
-
 
 
 /* Top Menu */
@@ -471,4 +486,62 @@ html {
 .top-menu a:hover {
   color: var(--accent-1);
   text-decoration: underline;
+}
+
+.education-item {
+  display: flex;
+  align-items: center; /* keeps logo and text side by side */
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.education-item img {
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* Text column */
+.education-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers text block vertically relative to logo */
+}
+
+.education-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.education-list {
+  flex: 0 1 auto;   /* only as wide as its content (no forced growth) */
+}
+
+.education-duke-img {
+  flex: 1;          /* take up all remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-duke-img img {
+  width: 100%;      /* fill the container */
+  height: auto;     /* keep aspect ratio */
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  object-fit: cover;
+}
+
+/* Hide the image on small screens */
+@media (max-width: 900px) {
+  .education-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .education-duke-img {
+    display: none;
+  }
 }
