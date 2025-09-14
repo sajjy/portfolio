@@ -1,0 +1,474 @@
+:root {
+  --accent-1: #00ddff;
+  --bkgrd-light: rgba(24,24,35,1);
+  --bkgrd-dark: #000000;
+}
+
+
+/* Reset + base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Hero section with split background */
+#hero {
+  position: relative;
+  height: 100vh; /* full screen */
+  overflow: hidden;
+}
+
+.split {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.left {
+  left: 0;
+  width: 40%;
+  background: var(--bkgrd-light);
+}
+
+.right {
+  right: 0;
+  width: 60%;
+  background: var(--bkgrd-dark); /* Black */
+}
+
+/* Hero Card */
+.hero-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: clamp(1rem, 4vw, 2rem);
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+
+/* Hero Card Animation States */
+
+
+.hero-card .hero-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.5s, transform 0.7s;
+}
+
+.hero-card.profile-in .hero-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-card .hero-right > *:not(.animated-title) {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.hero-card.final .hero-right > *:not(.animated-title) {
+  opacity: 1;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right {
+  flex: 2;
+}
+
+.hero-card h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}
+
+.hero-card .subtitle {
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: var(--accent-1);
+  letter-spacing: 1px;
+}
+
+.hero-card p {
+  margin: 1.2rem 0;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+/* Profile Picture in Hero Card */
+.hero-pic {
+  width: clamp(120px, 28vw, 260px);
+  height: clamp(120px, 28vw, 260px);
+  border-radius: 12px;
+  border: 4px solid var(--accent-1);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(35, 178, 239, 0.6);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1.5rem, 5vw, 2.5rem);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Projects Section */
+#projects {
+  background: black;
+  padding: 2rem 2rem;
+  min-height: 100vh;
+}
+
+#projects h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: left;
+}
+
+#projects h2 {
+  font-size: 2.5rem; /* larger heading */
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: left;
+}
+
+#projects a {
+  color: #FFF !important;
+  text-decoration: underline !important;
+}
+
+#about-me a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6rem 0;
+  gap: 1rem;  
+}
+
+.project-card .project-text {
+  flex: 1;
+  color: #eaeaea;
+}
+
+.project-card .project-image {
+  flex: 1;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Alternate layout */
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+#project-1-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-2-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-3-images {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-4-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .project-card, .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    max-width: 100%;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .hero-right {
+    padding: 0;
+  }
+
+  .hero-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-card h1 {
+    font-size: 2rem;
+  }
+
+  .hero-card p {
+    font-size: 1rem;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+
+  .top-menu {
+    display: none !important;
+  }
+  
+}
+
+.tech-tags {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid var(--accent-1);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tag img {
+  width: 18px;
+  height: 18px;
+}
+
+.tag:hover {
+  background-color: var(--accent-1);
+  transform: translateY(-2px);
+}
+
+/* Hobby Tags */
+.hobby-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+#hobby-display {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.hobby-tags {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;   /* Stack vertically */
+  flex-wrap: nowrap;        /* Prevent wrapping */
+  gap: 1rem;
+}
+
+.hobby-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #ace5f6a9;
+  color: #000000;
+  border: 2px solid var(--accent-1);
+  border-radius: 32px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hobby-tag img {
+  width: 32px;
+  height: 32px;
+}
+
+.hobby-tag.selected {
+  background-color: var(--accent-1) !important;
+  color: #222 !important;
+  border-color: var(--accent-1) !important;
+  transform: scale(1.07);
+}
+
+#hobby-img {
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#hobby-desc {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Animated name */
+.animated-title span {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.15s;
+}
+
+.animated-title span.visible {
+  opacity: 1;
+}
+
+.animated-title {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Hide everything in hero-card except .animated-title during pre-slide and slide-in */
+.hero-card.pre-slide,
+.hero-card.slide-in {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.hero-card.pre-slide .hero-left,
+.hero-card.pre-slide .hero-right > *:not(.animated-title),
+.hero-card.slide-in .hero-left,
+.hero-card.slide-in .hero-right > *:not(.animated-title) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Only show .animated-title during slide-in */
+.hero-card.pre-slide .animated-title,
+.hero-card.slide-in .animated-title {
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Me section links */
+#about-me a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+#about-me a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+#about-me {
+  background: #fff !important;
+  color: #000;  /* text color */
+  padding: 2rem 2rem;
+  min-height: 60vh;
+}
+
+#about-me * {
+  color: #000;
+}
+
+#about-me h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+
+
+/* Top Menu */
+.top-menu {
+  position: fixed;
+  top: 32px;
+  right: 48px;
+  z-index: 100;
+  display: flex;
+  gap: 2rem;
+}
+
+.top-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.top-menu a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
