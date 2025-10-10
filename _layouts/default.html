@@ -10,7 +10,7 @@
   <!-- Top-right menu -->
   <nav class="top-menu">
     <a href="#about-me">About</a>
-    <a href="#projects">Projects</a>
+    <a href="#current-projects">Projects</a>
   </nav>
 
   <!-- Top-left menu-->
@@ -61,13 +61,65 @@
           </span>
         </div>
 
-        <a href="#projects" class="btn">My Projects</a>
+        <a href="#current-projects" class="btn">My Projects</a>
       </div>
     </div>
   </section>
   
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="current-projects">
+    <h1>Currently In Progress...</h1>
+
+    <div class="project-card">
+      <div class="project-text">
+        <h2>Embedded Firmware for EKG / Temperature Medical Device</h2>
+        <p>
+          Designing industry-grade embedded firmware for a device that measures cardiac signals and temperature.
+          Developing firmware in <a href="https://www.zephyrproject.org/">Zephyr</a> on a Real-Time Operating System (RTOS)
+          and using a state-machine framework. Will utilize I2C serial communication to communicate with sensors and Bluetooth
+          for wireless data transfer.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/c-programming.svg' | relative_url }}" alt="c-programming">
+            C
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/bluetooth.png' | relative_url }}" alt="Bluetooth">
+            Bluetooth
+          </span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img id="project-5-images" src="{{ '/assets/project-images/embedded_ekg/nordic_dk.jpg' | relative_url }}" alt="Project5_image">
+      </div>
+    </div>
+
+    <div class="project-card reverse">
+      <div class="project-text">
+        <h2>Electrical Modeling of Neuron & Propagation of Action Potential</h2>
+        <p>
+          In Python, I've computationally modeled the Hodgkin-Huxley model the neuron as an electrical circuit.
+          Utilizing this model, we can simulate how different stimuli (such as via an implanted electrode) can propagate
+          action potentials through an axon to move muscles. This model accounts for membrane resistance & capacitance,
+          axial resistance, source current, ion channels, and myelination. 
+        </p>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img id="project-6-images" src="{{ '/assets/project-images/neuron_modeling/action_potential_ion_channels.png' | relative_url }}" alt="Project5_image">
+      </div>
+    </div>
+
+    </section>
+
+    <section id="projects">
+
     <h1>Projects</h1>
 
     <div class="project-card">

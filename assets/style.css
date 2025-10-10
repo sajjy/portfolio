@@ -233,7 +233,7 @@ html {
   height: 400px;
   width: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   display: block;
   margin: 0 auto;
 }
@@ -242,7 +242,25 @@ html {
   height: 320px;
   width: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-5-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-6-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 5px;
   display: block;
   margin: 0 auto;
 }
@@ -595,6 +613,38 @@ html {
   /* this gives LinkedIn's blue on hover */
 }
 
+#current-projects a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+#current-projects a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+#current-projects a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+#current-projects {
+  background: #fff !important;
+  color: #000;  /* text color */
+  padding: 2rem 2rem;
+  min-height: 60vh;
+}
+
+#current-projects * {
+  color: #000;
+}
+
+#current-projects h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -602,8 +652,33 @@ html {
     flex-direction: column;
   }
 
-  .project-card img {
+  /* make sure text stays above image */
+  .project-card .project-text {
+    order: 1;
+  }
+
+  /* image container */
+  .project-image {
+    display: block;
+    justify-content: center;
+    order: 2; /* puts image after text even if markup differs */
+    width: 100%;
+  }
+
+  .project-image img {
+    width: 100%;      /* fill screen width */
     max-width: 100%;
+    height: auto;     /* preserve aspect ratio */
+    margin: 1rem 0 0; /* small spacing above image */
+    border-radius: 5px;
+    object-fit: contain; /* avoid cropping on mobile */
+  }
+
+  .carousel {
+    display: block;
+    justify-content: center;
+    order: 2; /* puts image after text even if markup differs */
+    width: 100%;
   }
 
   .hero-card {
