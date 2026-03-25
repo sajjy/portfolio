@@ -106,9 +106,47 @@
 
     <div class="project-card reverse">
       <div class="project-text">
+        <h2>Engineering Rhythm: A Neural Network Simulation for Muscle Coordination</h2>
+        <h3>Description</h3>
+        <p>
+          <i>How does the central nervous system generate the rhythmic patterns required for locomotion?</i>
+          To explore this, I built a computer model of a physiological neural network known as a unit pattern generator (uPG).
+          Displayed alongside the original theoretical diagram, my dynamic animation visualizes the simulated membrane potentials
+          of the network over time, showing how this configuration of inhibitory and excitatory connections
+          successfully produces alternating motor output for an agonist/antagonist muscle pair, such as the quadriceps and hamstring. 
+        </p>
+        <h3>Project Features</h3>
+        <ul>
+          <li>
+            <strong>Computational Neuroscience:</strong>
+            Translated a theoretical biological topology into a functional mathematical model using Python and forward Euler integration.</li>
+          <li>
+            <strong>Emergent Rhythms:</strong>
+            Demonstrated how specific inhibitory and excitatory pathways naturally produces sustained, alternating neural oscillations.</li>
+          <li>
+            <strong>Visualizing Voltage:</strong>
+            Created a visual frame-generator that translates raw membrane potential data into an intuitive color scale,
+            capturing individual action potentials (flashes) and sustained phase shifts.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      <div class="project-8-image-container">
+        <img id="project-8-diagram" src="{{ '/assets/project-images/pattern_generator/diagram.png' | relative_url }}" alt="Diagram">
+        <img id="project-8-animation" src="{{ '/assets/project-images/pattern_generator/animation.gif' | relative_url }}" alt="Animation">
+      </div>
+    </div>
+      
+
+    <div class="project-card">
+      <div class="project-text">
         <h2>Recording Nerve Signals (Model)</h2>
           <p>
-            In Python, I've modeled recording nerve signals extracellularly from an implanted electrode.
+            In Python, I've modeled extracellular neural recordings from implanted electrodes.
             By integrating geometric weighting and membrane current derivatives, this simulation 
             accurately reconstructs the extracellular potential detected at the electrode interface.
             This tool provides a framework for optimizing electrode design/placement and signal processing
@@ -197,7 +235,7 @@
       </div>
     </div>
 
-  <div class="project-card">
+  <!-- <div class="project-card">
       <div class="project-text">
         <h2>Electrical Modeling of Neuron & Propagation of Action Potential</h2>
         <p>
@@ -216,9 +254,9 @@
       <div class="project-image">
         <img id="project-6-images" src="{{ '/assets/project-images/neuron_modeling/action_potential_ion_channels.png' | relative_url }}" alt="Project5_image">
       </div>
-    </div>
+    </div> -->
 
-  <div class="project-card reverse">
+  <div class="project-card">
       <div class="project-text">
         <h2>OXTR Expression in the Hypothalamus and Amygdala Following MDMA Administration</h2>
         <p>
@@ -241,7 +279,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reverse">
       <div class="project-text">
         <h2>Data Imputation and Graph-based Approach for Post-Stroke Immune System Response Profiling</h2>
         <p>

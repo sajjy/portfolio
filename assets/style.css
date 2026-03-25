@@ -265,6 +265,23 @@ html {
   margin: 0 auto;
 }
 
+.project-8-image-container {
+  display: flex;
+  flex-direction: column; /* Stacks the images vertically */
+  align-items: center;    /* Centers the images horizontally */
+  gap: 20px;              /* Adds some space between the two images */
+}
+
+#project-8-diagram,  #project-8-animation {
+  height: 250px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+
 .tech-tags {
   margin: 1rem 0;
   display: flex;
