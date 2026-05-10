@@ -1,0 +1,269 @@
+---
+layout: default
+---
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="split left"></div>
+    <div class="split right"></div>
+
+    <!-- Hero Card -->
+    <div class="hero-card" id="hero-card">
+      <div class="hero-left">
+        <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="hero-pic">
+      </div>
+      <div class="hero-right">
+        <div class="subtitle">Biomedical Engineer</div>
+        <h1 class="animated-title" id="animated-title"></h1>
+        <p>Curious • Adaptable • Collaborative</p>
+        <p>I'm a biomedical engineer passionate about developing medical devices
+          and Neural Engineering solutions that restore movement and transform lives.
+          My background spans rehabilitation science, neural/biological research, and computer science.
+          Guided by curiosity and creativity, I integrate research, engineering,
+          and wellness-focused innovation to advance healthcare technology.
+        </p>
+
+        <!-- Tech Tags -->
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/onshape.svg' | relative_url }}" alt="CAD">
+            CAD
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/c-programming.svg' | relative_url }}" alt="c-programming">
+            C
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/java.svg' | relative_url }}" alt="Java">
+            Java
+          </span>
+        </div>
+
+        <a href="#current-projects" class="btn">My Projects</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="current-projects">
+    <h1>What I'm Building Now...</h1>
+
+    <div class="project-card">
+      <div class="project-text">
+        <h2>Embedded Firmware for ECG / Temperature Medical Device</h2>
+        <ul>
+          <li>
+            Engineered a thread-safe embedded system using <a href="https://www.zephyrproject.org/">Zephyr</a> RTOS and a State Machine Framework (SMF)
+            for <strong>concurrent data acquisition, processing, and BLE communication</strong> tasks.</li>
+          <li>
+            Implemented real-time digital signal processing algorithms in C to filter noise and <strong>extract
+            heart-rate from raw ECG waveforms.</strong></li>
+          <li>
+            Developed a custom BLE GATT service alongside standard Battery and Heart Rate profiles to <strong>stream
+            sensor data and system diagnostics to a smartphone.</strong></li>
+          <li>
+            Designed a robust fault-tolerance system that detects peripheral failures (I2C/PWM/ADC),
+            transitions the device to a safe state, and <strong>broadcasts error codes for remote debugging.</strong></li>
+          <li><strong>Optimized power consumption</strong> and memory-efficiency for battery-operated usage.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/c-programming.svg' | relative_url }}" alt="c-programming">
+            C
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/bluetooth.png' | relative_url }}" alt="Bluetooth">
+            Bluetooth
+          </span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img id="project-5-images" src="{{ '/assets/project-images/embedded_ekg/nordic_dk.jpg' | relative_url }}" alt="Project5_image" loading="lazy">
+      </div>
+    </div>
+
+    <div class="project-card reverse">
+      <div class="project-text">
+        <h2>Engineering Rhythm: A Neural Network Simulation for Muscle Coordination</h2>
+        <h3>Description</h3>
+        <p>
+          <i>How does the central nervous system generate the rhythmic patterns required for locomotion?</i>
+          To explore this, I built a computer model of a physiological neural network known as a <strong>Unit Pattern Generator (uPG)</strong>.
+          Displayed alongside the original theoretical diagram, my dynamic animation visualizes the simulated membrane potentials
+          of the network over time, showing how this configuration of inhibitory and excitatory connections
+          successfully produces alternating motor output for an agonist/antagonist muscle pair, such as the quadriceps and hamstring. 
+        </p>
+        <h3>Project Features</h3>
+        <ul>
+          <li>
+            <strong>Computational Neuroscience:</strong>
+            Translated a theoretical biological topology into a functional mathematical model using Python and forward Euler integration.</li>
+          <li>
+            <strong>Emergent Rhythms:</strong>
+            Demonstrated how specific inhibitory and excitatory pathways naturally produces sustained, alternating neural oscillations.</li>
+          <li>
+            <strong>Visualizing Voltage:</strong>
+            Created a visual frame-generator that translates raw membrane potential data into an intuitive color scale,
+            capturing individual action potentials (flashes) and sustained phase shifts.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      <div class="project-8-image-container">
+        <img id="project-8-diagram" src="{{ '/assets/project-images/pattern_generator/diagram.png' | relative_url }}" alt="Diagram" loading="lazy">
+        <img id="project-8-animation" src="{{ '/assets/project-images/pattern_generator/animation.gif' | relative_url }}" alt="Animation" loading="lazy">
+      </div>
+    </div>
+      
+
+    <div class="project-card">
+      <div class="project-text">
+        <h2>Recording Nerve Signals (Model)</h2>
+          <p>
+            In Python, I've modeled extracellular neural recordings from implanted electrodes.
+            By integrating geometric weighting and membrane current derivatives, this simulation 
+            accurately reconstructs the extracellular potential detected at the electrode interface.
+            This tool provides a framework for optimizing electrode design/placement and signal processing
+            in applications such as <strong>functional electrical stimulation (FES)</strong> and in-vivo <strong>nerve monitoring.</strong>        
+          </p>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img id="project-7-images" src="{{ '/assets/project-images/axon_recording/axon_recording_animation.gif' | relative_url }}" alt="Project7_image" loading="lazy">
+      </div>
+    </div>
+
+    </section>
+
+    <section id="projects">
+
+    <h1>Projects</h1>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h2>Full Basic Microprocessor with MIPS Assembly Game</h2>
+            <p>A full basic microprocessor designed in SystemVerilog, featuring a complex MIPS assembly game.</p>
+            <a href="{{ '/projects/microprocessor.html' | relative_url }}" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h2>Python-powered Robot Navigates Obstacle Course</h2>
+            <p>Autonomous LEGO MINDSTORMS EV3 robots programmed in Python to process ultrasonic and bump sensor
+                data for real-time positional tracking and obstacle avoidance.</p>
+            <a href="{{ '/projects/lego_robot.html' | relative_url }}" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h2>Electrical Modeling of Neuron & Propagation of Action Potential</h2>
+            <p>A computational Python model that treats the neuron as a complex electrical circuit, utilizing the 
+                Hodgkin-Huxley equations to simulate how stimuli—such as from an implanted electrode—interact with ion channels 
+                and myelination to trigger action potentials.</p>
+            <a href="{{ '/projects/action_potential.html' | relative_url }}" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h2>OXTR Expression in the Hypothalamus and Amygdala Following MDMA Administration</h2>
+            <p>A neuroscience research project utilizing RT-qPCR and R-based data analysis to investigate
+                 how MDMA impacts oxytocin-receptor expression and contributes to prosocial behaviors.</p>
+            <a href="{{ '/projects/mdma_oxytocin.html' | relative_url }}" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h2>Data Imputation and Graph-based Approach for Post-Stroke Immune System Response Profiling</h2>
+            <p>A computational biology study leveraging data imputation and Leiden clustering in Python to successfully
+                 map immune system responses from incomplete clinical datasets.</p>
+            <a href="{{ '/projects/stroke.html' | relative_url }}" class="btn">Read More</a>
+        </div>
+    </div>
+
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about-me">
+    <h1>About </h1>
+    <div class="project-card">
+      <div class="project-text">
+        
+        <!-- EDUCATION-->
+        <h2>Education</h2>
+        <div class="education-flex">
+          <div class="education-list">
+            <!-- Duke -->
+            <div class="education-item">
+              <img src="{{ '/assets/school-logos/duke-logo.svg' | relative_url }}" alt="Duke University">
+              <div>
+                <p style="color: #666;">Aug 2025 - Present <br>(Graduating May 2027)</p>
+                <strong>Duke University</strong><br>
+                <span style="font-size: 0.98rem; color: #000;">Master of Engineering, Biomedical Engineering
+                  <br><br>
+                  <em>Pursuing a <a href="https://bme.duke.edu/academics/certificates/neural-engineering/">Certificate in Neural Engineering</a></em>
+                </span>
+              </div>
+            </div>
+            <!-- UNC -->
+            <div class="education-item">
+              <img src="{{ '/assets/school-logos/unc-logo.svg' | relative_url }}" alt="UNC Chapel Hill">
+              <div>
+                <p style="color: #666;">2021 - 2025</p>
+                <strong>UNC Chapel Hill</strong><br>
+                <span style="font-size: 0.98rem; color: #000;">Bachelor of Science (B.S.), Neuroscience and Computer Science (double major)
+                  <br><br>
+                  <em>Minor: Chemistry</em>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="education-duke-img">
+            <img class="duke-img" src="{{ '/assets/duke-university.jpg' | relative_url }}" alt="Duke University Campus">
+            <img class="unc-img" src="{{ '/assets/old-well-unc.jpg' | relative_url }}" alt="UNC Chapel Hill Campus">
+          </div>
+
+        </div>
+        
+        <!-- HOBBIES -->
+        <h2>Hobbies</h2>
+          <div class="hobby-section">
+            <div class="hobby-tags" id="hobby-tags">
+              <span class="hobby-tag" data-hobby="running">
+                <img src="{{ '/assets/hobby-icons/running.png' | relative_url }}" alt="Running">
+                Distance Running
+              </span>
+              <span class="hobby-tag" data-hobby="triathlon">
+                <img src="{{ '/assets/hobby-icons/triathlon.svg' | relative_url }}" alt="Triathlon">
+                Triathlon
+              </span>
+              <span class="hobby-tag" data-hobby="reading">
+                <img src="{{ '/assets/hobby-icons/book.svg' | relative_url }}" alt="Reading">
+                Reading
+              </span>
+            </div>
+            <div class="hobby-display" id="hobby-display">
+              <img id="hobby-img" src="{{ '/assets/triathlon-portrait.jpg' | relative_url }}" alt="Hobby">
+              <div id="hobby-desc">Long-term goal: complete an Ironman Triathlon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
