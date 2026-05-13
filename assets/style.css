@@ -146,6 +146,24 @@ html {
   color: black;
 }
 
+.btn-black {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1.5rem, 5vw, 2.5rem);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-black:hover {
+  background: black;
+  color: white;
+}
+
 /* Projects Section */
 #projects {
   background: black;
@@ -167,7 +185,7 @@ html {
   text-align: left;
 }
 
-#projects a {
+#projects a:not(.btn):not(.btn-black) {
   color: #FFF !important;
   text-decoration: underline !important;
 }
@@ -413,14 +431,14 @@ html {
 }
 
 /* About Me section links */
-#about-me a {
+#about-me a:not(.btn):not(.btn-black) {
   color: #000000 !important;
   text-decoration: underline !important;
 }
 
-#about-me a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
+#about-me a:not(.btn):not(.btn-black):hover {
+  color: var(--accent-1) !important;
+  text-decoration: underline !important;
 }
 
 #about-me {
@@ -430,7 +448,7 @@ html {
   min-height: 60vh;
 }
 
-#about-me * {
+#about-me *:not(.btn):not(.btn-black) {
   color: #000;
 }
 
@@ -630,19 +648,14 @@ html {
   /* this gives LinkedIn's blue on hover */
 }
 
-#current-projects a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
-}
-
-#current-projects a {
+#current-projects a:not(.btn):not(.btn-black) {
   color: #000000 !important;
   text-decoration: underline !important;
 }
 
-#current-projects a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
+#current-projects a:not(.btn):not(.btn-black):hover {
+  color: var(--accent-1) !important;
+  text-decoration: underline !important;
 }
 
 #current-projects {
@@ -652,7 +665,7 @@ html {
   min-height: 60vh;
 }
 
-#current-projects * {
+#current-projects *:not(.btn):not(.btn-black) {
   color: #000;
 }
 
@@ -660,6 +673,156 @@ html {
   font-size: 3.2rem; /* larger heading */
   margin-bottom: 0.5rem;
   text-align: left;
+}
+
+/* --- 1. Base Video Container (Shared by all) --- */
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- 2. Layout: Stacked Card --- */
+.stacked-card {
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.stacked-card h2 {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.stacked-card .project-text {
+  width: 100%;
+  max-width: 850px;
+  text-align: left;
+}
+
+/* --- 3. Video Grid (Side-by-Side) --- */
+.video-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* 1:1 Ratio for Grid Items (Math accounts for the gap) */
+.video-grid .video-responsive {
+  flex: 1;
+  padding-top: calc(50% - 0.75rem); 
+}
+
+/* --- 4. Single Video (Fallback/Specific) --- */
+.stacked-card .project-image {
+  width: 100%;
+  max-width: 320px; /* increase for better visibility */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* 1:1 Ratio for Single Video */
+.stacked-card .project-image .video-responsive {
+  padding-top: 100%; 
+}
+
+/* --- 5. Utilities & Mobile --- */
+.video-caption {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- PDF Viewer Styling --- */
+.pdf-container {
+  width: 100%;
+  max-width: 900px; /* Aligns nicely with the video grid above it */
+  margin: 1rem auto;
+  border: 1px solid #333; /* Darker border to match your dark theme */
+  border-radius: 12px; /* Matches your video and image borders */
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  background: #fff; /* Ensures white background behind the PDF while loading */
+}
+
+.pdf-container iframe {
+  border: none;
+  display: block;
+}
+
+
+/* --- 6. 50/50 Split Video (For standard .project-card layout) --- */
+.project-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px; /* Aligns with your standard image max-widths */
+}
+
+/* 16:9 Aspect Ratio for standard YouTube videos */
+.project-video .video-responsive {
+  padding-top: 56.25%; 
+}
+
+/* Reusable Back to Home Link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 1.15rem !important; /* Matches top-menu font size */
+  font-weight: 600 !important;   /* Matches top-menu font weight */
+  letter-spacing: 0.5px;
+  color: #fff !important;        
+  text-decoration: none !important; /* Removes the default underline */
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-1) !important; /* Adds your cyan accent color on hover */
+  text-decoration: underline !important; /* Adds underline only on hover */
+}
+
+@media (max-width: 768px) {
+  .project-video {
+    max-width: 100%;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-grid .video-responsive {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 100%; /* Becomes a full square when stacked vertically */
+  }
 }
 
 
